@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id              Int           @id @default(autoincrement())
+  wallet_address  String?       @unique
+  name            String?       
+  avatar          String?       
+  email           String?       
+  phone_number    String?       
+  bio             String?       
+  created_items   items[]       @relation("usercreateditems")
+  collected_items items[]       @relation("usercollecteditems")
+  offers          offers[]      @relation("useroffers")
+  from_activities activities[]  @relation("userfromactivities")
+  to_activities   activities[]  @relation("usertoactivities")
+  collections     collections[] @relation("usercollections")
+  createdAt       DateTime?     @default(now())
+  updatedAt       DateTime?     @updatedAt
+  deletedAt       DateTime?
+}
+
+model items {
+  id                Int           @id @default(autoincrement())
+  name              String?   
+  description       String?       @db.Text
+  image             String?   
+  price             Float?    
+  royatity          Float?   
+  attributes        String?       @db.Text
+  contract_address  String?       @unique
+  collection        collections?  @relation("collectionitems", fields: [collection_id], references: [id])
+  collection_id     Int?
+  creator           users?        @relation("usercreateditems", fields: [creator_id], references: [id])
+  collector         users?        @relation("usercollecteditems", fields: [collector_id], references: [id])
+  creator_id        Int?
+  collector_id      Int?
+  status            String?
+  featured          Boolean?
+  offers            offers[]      @relation("itemoffers")
+  activities        activities[]  @relation("itemactivities")
+  createdAt         DateTime?     @default(now())
+  updatedAt         DateTime?     @updatedAt
+  deletedAt         DateTime?
+}
+
+model offers {
+  id          Int       @id @default(autoincrement())
+  item        items?    @relation("itemoffers", fields: [item_id], references: [id])
+  item_id     Int?   
+  user        users?    @relation("useroffers", fields: [user_id], references: [id])
+  user_id     Int?   
+  price       Float?   
+  status      String?
+  createdAt   DateTime? @default(now())
+  updatedAt   DateTime? @updatedAt
+  deletedAt   DateTime?
+}
+
+model activities {
+  id            Int       @id @default(autoincrement())
+  item          items?    @relation("itemactivities", fields: [item_id], references: [id])
+  item_id       Int?
+  type          String?
+  price         Float?
+  from_user     users?    @relation("userfromactivities", fields: [from_user_id], references: [id])
+  to_user       users?    @relation("usertoactivities", fields: [to_user_id], references: [id])
+  from_user_id  Int?
+  to_user_id    Int?
+  createdAt     DateTime? @default(now())
+  updatedAt     DateTime? @updatedAt
+  deletedAt     DateTime?
+}
+
+model collections {
+  id                Int           @id @default(autoincrement())
+  user              users?        @relation("usercollections", fields: [user_id], references: [id])
+  user_id           Int?
+  image             String?
+  image_background  String?
+  name              String?
+  description       String?       @db.Text
+  contract_address  String?       @unique
+  featured          Boolean?  
+  items             items[]       @relation("collectionitems")
+  attributes        attributes[]  @relation("collectionattributes")
+  createdAt         DateTime?     @default(now())
+  updatedAt         DateTime?     @updatedAt
+  deletedAt         DateTime?
+}
+
+model attributes {
+  id            Int           @id @default(autoincrement())
+  collection    collections?  @relation("collectionattributes", fields: [collection_id], references: [id])
+  collection_id Int?
+  type          String
+  value         String?
+  item_count    Int?
+  createdAt     DateTime?     @default(now())
+  updatedAt     DateTime?     @updatedAt
+  deletedAt     DateTime?
+}

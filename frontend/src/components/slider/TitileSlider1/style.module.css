@@ -1,0 +1,8 @@
+.collection-card {
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+.collection-card:hover {
+  transform: scale(1.07);
+}

@@ -1,0 +1,14 @@
+.item-card-1 {
+  margin-bottom: 0px !important;
+  border: 1px solid #343434;
+}
+
+.sale-mark {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 5px;
+}

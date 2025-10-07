@@ -1,0 +1,14 @@
+{
+  "errors": {
+    "internal_error": "Internal Error",
+    "validation": {
+      "required": "{{name}} is required.",
+      "invalid": "{{name}} is invalid.",
+      "duplicated": "{{name}} is duplicated."
+    },
+    "item_not_listed": "Item Not Listed",
+    "already_made_offer": "Already Made Offer",
+    "already_exist": "Already Exist",
+    "invalid_request": "Invalid Request"
+  }
+}

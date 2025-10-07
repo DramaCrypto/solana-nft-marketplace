@@ -1,0 +1,15 @@
+{
+  "errors": {
+    "form": {
+      "required": "{{name}} is required."
+    },
+    "something_went_wrong": "something went wrong"
+  },
+  "copied": "Copied successfully!",
+  "listed": "Listed successfully!",
+  "offered": "Offered successfully!",
+  "accepted": "Accepted successfully!",
+  "canceled": "Canceled successfully!",
+  "purchased": "Purchased successfully!",
+  "submitted": "Submitted successfully!"
+}

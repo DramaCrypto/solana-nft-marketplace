@@ -1,0 +1,16 @@
+.modal-content {
+  width: 100%;
+}
+
+.btn-cancel {
+  height: 50px !important;
+}
+
+.btn-submit,
+.btn-cancel {
+  width: unset !important;
+}
+
+.input-price {
+  width: unset !important;
+}

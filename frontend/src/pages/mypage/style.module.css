@@ -1,0 +1,56 @@
+.offers .item-img {
+  width: 50px;
+  height: 50px !important;
+  border-radius: 25px;
+}
+
+.user .links {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.user .background {
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #282828;
+}
+
+.user .info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.user .info .base-image-square {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+}
+
+.user .info .base-image-square .base-image {
+  object-fit: cover;
+  border: 3px solid #cfcfcf;
+  border-radius: 10px;
+}
+
+.user .info .base-image-square .blockies-image {
+  border: 3px solid #cfcfcf;
+  border-radius: 10px;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.user .info .description {
+  max-width: 400px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.user .values {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}

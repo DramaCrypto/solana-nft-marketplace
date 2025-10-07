@@ -1,0 +1,26 @@
+.modal-content {
+  width: 100%;
+}
+
+.iframe {
+  border-radius: 10px;
+}
+
+.url-section {
+  border-radius: 10px;
+  background-color: #232323;
+}
+
+.url-section .url {
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.url-section .btn-copy {
+  width: unset;
+}

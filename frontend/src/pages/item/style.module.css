@@ -1,0 +1,15 @@
+.item-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.item-image,
+.item-status,
+.item-detail,
+.item-offers,
+.item-activities {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0;
+}
