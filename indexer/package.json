@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-mongo-server",
+  "version": "0.8.0",
+  "description": "Node.js / MongoDB application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "Wonder Boy",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.93.4",
+    "axios": "^1.7.2",
+    "dotenv": "^16.3.1",
+    "winston": "^3.13.1",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
